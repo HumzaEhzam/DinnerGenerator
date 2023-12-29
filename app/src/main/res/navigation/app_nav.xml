@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/app_nav"
+    app:startDestination="@id/categoryFragment">
+
+    <fragment
+        android:id="@+id/categoryFragment"
+        android:name="com.example.dinnergenerator.ui.fragments.CategoryFragment"
+        android:label="fragment_catergory"
+        tools:layout="@layout/fragment_catergory"
+        >
+        <action
+            android:id="@+id/categoryFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+    <fragment
+        android:id="@+id/dinnerFragment"
+        android:name="com.example.dinnergenerator.ui.fragments.DinnerFragment"
+        android:label="DinnerFragment"
+        tools:layout="@layout/fragment_dinner"
+        >
+        <argument
+            android:name="categoryMeal"
+            app:argType="string" />
+        <argument
+            android:name="categoryDrink"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>
